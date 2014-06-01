@@ -17,7 +17,7 @@ CREATE TABLE Ingredients(
 );
 CREATE TABLE Recipes(
 	recipe_id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(250) NOT NULL,
+	recipe_name VARCHAR(250) NOT NULL,
 	user_id int NOT NULL,
 	short_description VARCHAR(500),
 	PRIMARY KEY(recipe_id)
