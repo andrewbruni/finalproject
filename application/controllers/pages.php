@@ -34,6 +34,13 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/createuser_blank', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
+		else if( $page == 'createuser_error')
+		{
+			$data['title'] = "Account Creation" ; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/createuser_error', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
 		else if( $page == 'nologin')
 		{
 			$data['title'] = "Login Failed"; // Capitalize the first letter

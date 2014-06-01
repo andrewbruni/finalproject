@@ -6,6 +6,16 @@
 --> 
 
 <?php
+
+	$sql = "SELECT * FROM users WHERE username = '". $_POST['userName'] . "'" ; 
+	$query = $this->db->query($sql) ; 
+	
+	if($query->num_rows() > 0) 
+	{
+		redirect('createuser_error') ; 	
+	}
+
+
 	$data = array(
    		'username' => $_POST['userName'] ,
    		'password' => $_POST['password'] ,
@@ -29,6 +39,8 @@
 	// Set Cookies 			
 	setcookie("userCookie", $json, time()+604800);  /* expire in 7 days */
 	$_COOKIE['userCookie'] = $json;
+
+	$_SESSION['bool'] = 1 ; 
 
 	redirect('login') ; 
 ?>
