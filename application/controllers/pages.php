@@ -15,21 +15,21 @@ class Pages extends CI_Controller {
 		
 		if( $page == 'home')
 		{
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = "Home"; // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/home', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
 		else if( $page == 'createuser')
 		{
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = "Account Creation" ; // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/createuser', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
 		else if( $page == 'nologin')
 		{
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = "Login Failed"; // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/nologin', $data) ;
 			$this->load->view('templates/footer', $data) ;
@@ -43,21 +43,21 @@ class Pages extends CI_Controller {
 		}
 		else if( $page == 'login' ) 
 		{
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = "User Home" ; // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/login', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
 		else if( $page == 'insert')
 		{
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = "Add a Recipe"; // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/insert', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
 		else if( $page == 'insertIngredients')
 		{
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = "Add a Recipe"; // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/insertIngredients', $data) ;
 			$this->load->view('templates/footer', $data) ;
@@ -71,9 +71,16 @@ class Pages extends CI_Controller {
 		}
 		else if( $page == 'insertComplete')
 		{
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = "Add a Recipe"; // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/insertComplete', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+		else if( $page == 'search')
+		{
+			$data['title'] = "Add a Recipe"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/search', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
 	}

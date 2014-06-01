@@ -23,7 +23,7 @@ else
 
 <form id="loginForm" action="../finalproject/home_blank" enctype="multipart/form-data" method="post" class="pure-form center" > 
     	<br />
-        <p><b>Login: &nbsp;</b>
+        <p>
         Username <input type="text" value="" name="userName" id="userName" />
        	Password <input type="password" value="" name="password" id="password" />
         <input type="submit" value="Login" /></p>
