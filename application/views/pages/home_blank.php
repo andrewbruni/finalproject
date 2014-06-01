@@ -7,7 +7,7 @@
 <?php
 
 	// Check password and username
-	$sql = 'SELECT * FROM Users WHERE username = "' .$_POST['userName']. '"' ;
+	$sql = 'SELECT * FROM users WHERE username = "' .$_POST['userName']. '"' ;
 	$query = $this->db->query($sql) ;
 
 	
