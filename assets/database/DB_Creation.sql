@@ -5,6 +5,7 @@ CREATE TABLE Users(
 	password VARCHAR(100) NOT NULL,
 	css1 VARCHAR(50) NOT NULL,
 	css2 VARCHAR(50) NOT NULL,
+	css3 VARCHAR(50) NOT NULL,
 	PRIMARY KEY(user_id),
 	UNIQUE(username)
 );
@@ -16,6 +17,7 @@ CREATE TABLE Ingredients(
 CREATE TABLE Recipes(
 	recipe_id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(250) NOT NULL,
+	user_id int NOT NULL,
 	short_description VARCHAR(500),
 	PRIMARY KEY(recipe_id)
 );
