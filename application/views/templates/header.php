@@ -27,14 +27,13 @@
        <a href="<?php  echo base_url(); ?>/home"><h1 class="center" id="pageTitle"> Find Me a Drink </h1></a>
        
         <ul id="menu">
-        	<li><i class="fa fa-chevron-circle-right fa-3x faColor"></i>
+        	
         	<ul>
         		<li><a class="navColor" href="<?php  echo base_url(); ?>home">&nbsp; Home</a></li>
         		<li><a class="navColor" href="<?php  echo base_url(); ?>search">Search Drinks</a></li>
         		<li><a class="navColor" href="<?php  echo base_url(); ?>insert">Add a Recipe</a></li>
         	</ul>
-        	</li>
-        </ul>
+       </ul>
         
     </div>
        

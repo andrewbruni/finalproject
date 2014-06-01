@@ -9,6 +9,7 @@
 	$amounts = array() ; 
 	$iID = array() ; 
 	$ingredients = array() ; 
+	$i = 0  ;
 	
 	// ID
 	$sql = 'SELECT * FROM recipes WHERE name = "' . $_GET['drink'] . '"' ; 
@@ -42,13 +43,25 @@
 	{
 		$sql4 = 'SELECT * FROM ingredients where ingredient_id = "' . $item . '"' ; 
 		$query4 = $this->db->query($sql4) ;
-		array_push($ingredients, $query4->result()->name) ;  
+		foreach($query4->result() as $row4)
+		{
+			$thename = $row4->name ; 	
+		}
+		array_push($ingredients, $thename) ;  
 	}
 	
 	echo '<p> <b>Drink Name:</b> ' .$_GET['drink'] ; 
 	echo '<br /><br />' ; 
 	echo '<p> <b>Ingredients:</b></p> ' ; 
 	echo '<br /><br />' ; 
+	foreach($ingredients as $item)
+	{
+		echo $item ; 
+		echo '&nbsp;' ; 
+		echo $amounts[$i] ; 
+		echo '<br /><br />' ; 
+		$i = $i + 1 ; 
+	}
 	
 	echo '<p> <b>Instructions:</b> &nbsp;' .$instructions. '</p>' ; 
 ?> 

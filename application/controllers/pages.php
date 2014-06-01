@@ -132,6 +132,29 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/searchuser_blank', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
+		else if( $page == 'update')
+		{
+			$data['title'] = "Update Recipe"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/update', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+		else if( $page == 'update_blank')
+		{
+			$data['title'] = "View Recipe"; // Capitalize the first letter
+			
+			$this->load->view('pages/update_blank', $data) ;
+			
+		}
+		else if( $page == 'delete')
+		{
+			$data['title'] = "Delete Recipe"; // Capitalize the first letter
+			
+			$this->load->view('pages/delete', $data) ;
+			redirect('login') ; 
+			
+		}
+		
 
 	}
 }
