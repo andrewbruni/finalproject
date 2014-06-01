@@ -17,7 +17,7 @@ Backend page for inserting a recipe
 		$sql = "SELECT user_id FROM Users where username='".$_SESSION['username']."'";
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
-			$userId = $row['user_id'];
+			$userId = $row->user_id;
 		}
 		
 		/*Insert the Recipe into the Recipe Table*/
@@ -31,7 +31,7 @@ Backend page for inserting a recipe
 		$sql = "SELECT recipe_id FROM Recipes WHERE name='".$_POST['recipeName']."' AND user_id=".$userId." AND short_description='".$_POST['description'];
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
-			$recipeId = $row['recipe_id'];
+			$recipeId = $row->recipe_id;
 		}
 		
 		/*Insert the Instructions for the recipe*/
@@ -54,7 +54,7 @@ Backend page for inserting a recipe
 		$sql = "SELECT name FROM Ingredients WHERE name IN('".implode("','", $ingNames)."')";
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
-			$pos = array_search($row['name'], $ingToInsert);
+			$pos = array_search($row->name, $ingToInsert);
 			unset($ingToInsert[$pos]);
 		}
 		
@@ -75,8 +75,8 @@ Backend page for inserting a recipe
 		foreach($query->result() as $row) {
 			$temp = array(
 			'recipe_id' => $recipeId,
-			'ingredient_id' => $row['ingredient_id'],
-			'amount' => $amounts[$row['name']]
+			'ingredient_id' => $row->ingredient_id,
+			'amount' => $amounts[$row->name]
 			);
 			array_push($data, $temp);
 		}
