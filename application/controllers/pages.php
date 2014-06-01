@@ -55,6 +55,13 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/login', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
+		else if( $page == 'css_blank' ) 
+		{
+			$data['title'] = "User Home" ; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/css_blank', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
 		else if( $page == 'insert')
 		{
 			$data['title'] = "Add a Recipe"; // Capitalize the first letter

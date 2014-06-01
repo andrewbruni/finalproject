@@ -9,7 +9,7 @@
 
 <script type="text/javascript" src="/finalproject/assets/js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="/finalproject/assets/js/jquery.tablesorter.js"></script>
-<script type="text/javascript" src="/finalproject/assets/js/validate.js"></script> 
+<script type="text/javascript" src="/finalproject/assets/js/validate.js"></script>
 
 	
 <title><?php echo $title ?> </title>
@@ -29,9 +29,9 @@
         <ul id="menu">
         	<li><i class="fa fa-chevron-circle-right fa-3x faColor"></i>
         	<ul>
-        		<li><a href="home">&nbsp; Home</a></li>
-        		<li><a href="search">Search Drinks</a></li>
-        		<li><a href="insert">Add a Recipe</a></li>
+        		<li><a class="navColor" href="home">&nbsp; Home</a></li>
+        		<li><a class="navColor" href="search">Search Drinks</a></li>
+        		<li><a class="navColor" href="insert">Add a Recipe</a></li>
         	</ul>
         	</li>
         </ul>

@@ -11,7 +11,7 @@ body
 { 
 	height:100% ; 
 	margin: 0px 0px 0px 0px ;  
-	background-color: white  ; 
+	background-color: white  ; /* User Custom */
 }
 
 h1
@@ -114,6 +114,11 @@ div
     text-align: center;	
 }
 
+#cssForm
+{
+    text-align: center;	
+}
+
 #searchForm1, #searchForm2, #searchForm3
 {
     text-align: center;	
@@ -146,7 +151,7 @@ div
 #headerbar
 {
 	vertical-align: top ; 
-	background-color: #578733 ;
+	background-color: #578733 ; /* User Custom */
 	width: 100% ; 
 	position:relative ; 
 }
@@ -161,7 +166,7 @@ div
 
 .faColor
 {
-	color: white ; 	
+	color: white ; 
 }
 
 #menu
@@ -192,13 +197,13 @@ ul li a
 {
   display: inline;
   text-decoration: none;
-  color: #ffffff;
+  color: #ffffff; 
   padding: 5px 15px 5px 15px;
-  background: #578733;
+  background: #578733; /* User Custom */
   white-space: nowrap;
 }
 
-ul li a:hover { background: #578733; }
+ul li a:hover { background: #578733; } /* User Custom */
 
 li:hover ul 
 {
@@ -212,6 +217,6 @@ li:hover li
   font-size: 18px;
 }
 
-li:hover a { background: #578733; }
+li:hover a { background: #578733; } /* User Custom */
 
-li:hover li a:hover { background: #BFD997; }
+li:hover li a:hover { background: rgba(255,255,255,.5) !important ; }

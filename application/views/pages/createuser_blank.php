@@ -10,7 +10,8 @@
    		'username' => $_POST['userName'] ,
    		'password' => $_POST['password'] ,
    		'css1' => $_POST['color1'],
-   		'css2' => $_POST['color2']
+   		'css2' => $_POST['color2'],
+		'css3' => $_POST['color3']
 	) ;
 
 	$this->db->insert('users', $data) ; 
