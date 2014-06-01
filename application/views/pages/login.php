@@ -33,10 +33,13 @@
 	$query = $this->db->query($sql) ;
 	
 		
-	echo '<table class="pure-table center tablesorter"><thead><tr><th>Drink Recipe</th><th>Description</th><th>Added By</th></tr></thead><tbody>' ;
+	echo '<table class="pure-table center tablesorter"><thead><tr><th>View</th><th>Drink Recipe</th><th>Description</th><th>Added By</th></tr></thead><tbody>' ;
 	
 	foreach ($query->result() as $row)
-	{	echo '<tr>' ;
+	{	
+		$location = "location.href='view/?drink=".$row->name."'" ; 
+		echo '<tr>' ;
+		echo '<td> <button onClick="'.$location.'"> View </button> </td>' ; 
    		echo '<td>'.$row->name.'</td>' ;
    		echo '<td>'.$row->short_description.'</td>' ;
    		echo '<td>'.$userCookieArray[0].'</td>' ;

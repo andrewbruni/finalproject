@@ -92,10 +92,46 @@ class Pages extends CI_Controller {
 		}
 		else if( $page == 'search')
 		{
-			$data['title'] = "Add a Recipe"; // Capitalize the first letter
+			$data['title'] = "Search for a Recipe"; // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/search', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
+		else if( $page == 'view')
+		{
+			$data['title'] = "View Recipe"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/view', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+		else if( $page == 'randomDrink')
+		{
+			$data['title'] = "View Recipe"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/randomDrink', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+		else if( $page == 'searchrecipe_blank')
+		{
+			$data['title'] = "View Recipe"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/searchrecipe_blank', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+		else if( $page == 'searchingredient_blank')
+		{
+			$data['title'] = "View Recipe"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/searchingredient_blank', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+		else if( $page == 'searchuser_blank')
+		{
+			$data['title'] = "View Recipe"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/searchuser_blank', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+
 	}
 }

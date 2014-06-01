@@ -7,7 +7,7 @@ Form will forawrd to insert_blank and redirect back.
 --> 
 
 
-	<form id="searchForm1" action="../finalproject/search_blank" enctype="multipart/form-data" method="post" class="pure-form center" >
+	<form id="searchForm1" action="../finalproject/searchrecipe_blank" enctype="multipart/form-data" method="post" class="pure-form center" >
     	<br />
         <p><b>Search for a Drink: &nbsp;</b>
         <br />
@@ -17,22 +17,22 @@ Form will forawrd to insert_blank and redirect back.
         <input type="submit" value="Find me a Drink" /></p>
     </form>
     
-    <form id="searchForm2" action="../finalproject/search_blank" enctype="multipart/form-data" method="post" class="pure-form center" >
+    <form id="searchForm2" action="../finalproject/searchingredient_blank" enctype="multipart/form-data" method="post" class="pure-form center" >
         <br />
 
-        <p>Search by Ingredient <input type="text" value="" name="recipeName" id="recipeName" />
+        <p>Search by Ingredient <input type="text" value="" name="ingredientName" id="ingredientName" />
         
         <input type="submit" value="Find me a Drink" /></p>
     </form>
     
-    <form id="searchForm3" action="../finalproject/search_blank" enctype="multipart/form-data" method="post" class="pure-form center" >
+    <form id="searchForm3" action="../finalproject/searchuser_blank" enctype="multipart/form-data" method="post" class="pure-form center" >
         <br />
 
-      	<p>Search by User <input type="text" value="" name="recipeName" id="recipeName" />
+      	<p>Search by User <input type="text" value="" name="userName" id="userName" />
         
         <input type="submit" value="Find me a Drink" /></p>
         <br /><br />
 
-        <input type=button onClick="location.href='search_blank'" value='Find me a Random Drink'>
+        <input type=button onClick="location.href='randomDrink'" value='Find me a Random Drink'>
 	</form>
     
