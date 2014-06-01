@@ -23,12 +23,12 @@ Backend page for inserting a recipe
 		/*Insert the Recipe into the Recipe Table*/
 		$data = array(
 		'name' => $_SESSION['recipeName'],
-		'user_id' => $UserId,
+		'user_id' => $userId,
 		'short_description' => $_POST['description'] );
 		$this->db->insert('Recipes', $data);
 		
 		/*Query the id of the recipe that was just inserted*/
-		$sql = "SELECT recipe_id FROM Recipes WHERE name='".$_POST['recipeName']."' AND user_id=".$userId." AND short_description='".$_POST['description'];
+		$sql = "SELECT recipe_id FROM Recipes WHERE name='".$_SESSION['recipeName']."' AND user_id=".$userId." AND short_description='".$_POST['description']."'";
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
 			$recipeId = $row->recipe_id;
@@ -38,7 +38,7 @@ Backend page for inserting a recipe
 		$data = array(
 		'recipe_id' => $recipeId,
 		'recipe_instructions' => $_POST['instructions'] );
-		$this->db->insert('Recipes_Detail', $data);
+		$this->db->insert('Recipe_Detail', $data);
 		
 		/*Fetch Ingredients from page*/
 		$x = $_SESSION['number'];
@@ -47,6 +47,7 @@ Backend page for inserting a recipe
 		while ($x != 0) {
 			array_push($ingNames, $_POST['i'.$x]);
 			$amounts[$_POST['i'.$x]] = $_POST['a'.$x];
+			$x = $x-1;
 		}
 		$ingToInsert = $ingNames;
 		

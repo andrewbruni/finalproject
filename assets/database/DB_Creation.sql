@@ -1,4 +1,5 @@
 CREATE DATABASE drinkmaker;
+USE drinkmaker;
 CREATE TABLE Users(
 	user_id int NOT NULL AUTO_INCREMENT,
 	username VARCHAR(100) NOT NULL,
@@ -23,7 +24,7 @@ CREATE TABLE Recipes(
 );
 CREATE TABLE Recipe_Detail(
 	recipe_id INT NOT NULL,
-	recipe_instructions INT NOT NULL,
+	recipe_instructions VARCHAR(1000) NOT NULL,
 	PRIMARY KEY(recipe_id)
 );
 CREATE TABLE Recipe_Contents(
