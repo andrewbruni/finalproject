@@ -30,14 +30,13 @@ Backend page for inserting a recipe
 		$rName = $_SESSION['recipeName'];
 		
 		/*Query the id of the recipe that was just inserted*/
-<<<<<<< HEAD
+
 		$sql = "SELECT recipe_id FROM Recipes WHERE name ='".$rName."' AND user_id=".$userId;
 		echo $sql;
 		$recipeId = null;
-=======
+
 
 		$sql = "SELECT recipe_id FROM Recipes WHERE name='".$_SESSION['recipeName']."' AND user_id=".$userId." AND short_description='".$_POST['description']."'";
->>>>>>> 90d7406b29cc9be29f3682444de9f4d96c3449cb
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
 		echo "Got Called";
