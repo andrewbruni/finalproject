@@ -20,6 +20,13 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/home', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
+		else if( $page == 'createuser')
+		{
+			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/createuser', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
 		else if( $page == 'nologin')
 		{
 			$data['title'] = ucfirst($page); // Capitalize the first letter
@@ -61,7 +68,13 @@ class Pages extends CI_Controller {
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/insert_blank', $data) ;
 			$this->load->view('templates/footer', $data) ;
-			redirect('insert') ;
+		}
+		else if( $page == 'insertComplete')
+		{
+			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/insertComplete', $data) ;
+			$this->load->view('templates/footer', $data) ;
 		}
 	}
 }

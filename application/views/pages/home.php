@@ -29,7 +29,7 @@ else
         <input type="submit" value="Login" /></p>
 		<br />
 		<br /> 
-        <p>Need an Account? &nbsp; </p><input type=button onClick="location.href='createuser.php'" value='Create Account'>
+        <p>Need an Account? &nbsp; </p><input type=button onClick="location.href='createuser'" value='Create Account'>
 </form>
 
 

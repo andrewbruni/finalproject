@@ -19,6 +19,11 @@ Form will forawrd to insert_blank and redirect back.
         <p><b>Add a Recipe: &nbsp;</b>
         <br />
 		<br />
+        Description: 
+        <br />
+		<textarea name="description" id="description" rows="4"  cols="50"> </textarea>
+        <br />
+        <br />
         <?php
 		
 			$x = $_SESSION['number'] ; 
@@ -37,5 +42,12 @@ Form will forawrd to insert_blank and redirect back.
 			}
         
 		?>
+        <br />
+		Instructions: 
+        <br />
+		<textarea name="instructions" id="instructions" rows="4"  cols="50"> </textarea>
+        <br />
+		<br />
+
         <input type="submit" value="Add Recipe" /></p>
 	</form>
