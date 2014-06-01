@@ -56,9 +56,9 @@
 	echo '<br /><br />' ; 
 	foreach($ingredients as $item)
 	{
-		echo $item ; 
+		echo '<p>'.$item ; 
 		echo '&nbsp;' ; 
-		echo $amounts[$i] ; 
+		echo $amounts[$i].'</p>' ; 
 		echo '<br /><br />' ; 
 		$i = $i + 1 ; 
 	}

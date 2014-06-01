@@ -154,6 +154,13 @@ class Pages extends CI_Controller {
 			redirect('login') ; 
 			
 		}
+		else if( $page == 'logout_blank') 
+		{
+			$data['title'] = "Logout"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/logout_blank', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
 		
 
 	}
