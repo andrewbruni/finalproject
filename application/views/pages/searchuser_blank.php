@@ -1,4 +1,6 @@
 <?php
+
+	$userid = ' '  ; 
 	$sql = ' SELECT * FROM users WHERE username = "'.$_POST['userName'].'"'  ;	
 	$query = $this->db->query($sql) ;
 	foreach ($query->result() as $row)
@@ -6,8 +8,10 @@
 		$userid = $row->user_id ;
 	}
 	
-	$sql = 'SELECT * FROM recipes WHERE user_id =' . $userid .  '' ;
-	$query = $this->db->query($sql) ;
+	if( $userid != ' ' )
+	{
+		$sql = 'SELECT * FROM recipes WHERE user_id =' . $userid .  '' ;
+		$query = $this->db->query($sql) ;
 	
 		
 	echo '<table class="pure-table center tablesorter"><thead><tr><th>View</th><th>Drink Recipe</th><th>Description</th><th>Added By</th></tr></thead><tbody>' ;
@@ -23,6 +27,10 @@
 		echo '</tr>' ;
 	}
 	
-	echo '</tbody></table>' 
-
+	echo '</tbody></table>' ;
+	}
+	else
+	{
+		echo '<h2> No User Found, Try Again </h2>' ; 	
+	}
 ?>
