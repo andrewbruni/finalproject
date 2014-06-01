@@ -22,9 +22,19 @@
 
 	<div id="content-area"> 
 
-	<div id="sidebar">
+	<div id="headerbar">
     
        <a href="../finalproject/home"><h1 class="center" id="pageTitle"> Find Me a Drink </h1></a>
+       
+        <ul id="menu">
+        	<li><i class="fa fa-chevron-circle-right fa-3x faColor"></i>
+        	<ul>
+        		<li><a href="home">&nbsp; Home</a></li>
+        		<li><a href="">Search Drinks</a></li>
+        		<li><a href="insert">Add a Recipe</a></li>
+        	</ul>
+        	</li>
+        </ul>
         
     </div>
        

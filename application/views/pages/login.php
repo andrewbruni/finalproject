@@ -4,13 +4,20 @@
 	USER HOME PAGE 
     User will view any recipes they have uploaded
     User will be able to change style sheet options, saved with cookies 
--->  
+--> 
 
-
-
-
-<!--
 <?php
+
+	// Grab Cookie User Data
+	
+	$cookie = $_COOKIE['userCookie'];
+	$cookie = stripslashes($cookie);
+	$userCookieArray = json_decode($cookie, true);
+	
+	
+	
+	// Select Query to Select All Recipes From User
+	
 /*
 	$sql = 'SELECT * FROM Names' ;
 	$query = $this->db->query($sql) ;

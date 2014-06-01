@@ -21,6 +21,11 @@ else
 
 ?>
 
+<h2 class="center"> Bad Login, Please Try Again </h2>
+<br />
+<br />
+
+
 <form id="loginForm" action="../finalproject/home_blank" enctype="multipart/form-data" method="post" class="pure-form center" > 
     	<br />
         <p><b>Login: &nbsp;</b>

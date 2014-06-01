@@ -20,6 +20,14 @@ h1
 	font-family: 'Raleway', 'sans-serif' ;
 }
 
+h2
+{
+	text-align:center ;
+	color: black ; 
+	font-family: 'Raleway', 'sans-serif' ;
+}
+
+
 h1 a:link
 {
 	color: white ; 
@@ -69,43 +77,29 @@ div
 	-moz-transition: margin-left .5s ;
 }
 
-#sidebar
-{
-	vertical-align: top ; 
-	background-color: #578733 ;
-	width: 100% ; 
-	position:relative ; 
-}
-
 
 /* HOME PAGE */ 
 #home
 {
 	height: 40% ; 
+	width:100% ; 
 	margin-top: 3%;
 	margin-bottom:auto ; 
 	position:absolute ;
 } 
 
-#pageTitle
+#accountButton
 {
-	display: inline-block ; 
-	vertical-align: top;
-	text-align: center ; 
-	margin-top: auto ; 	
-}
-
-#home-text
-{
-	text-align: center;
-	margin-top: 4%;
-	margin-bottom: auto ; 
-	background-color: rgba(0,0,0,0.3);
+	width: 10% ;
+	margin-left: auto;
+	margin-right: 25%;
+	margin-bottom: auto;
+	text-align:center ;
 }
 
 /* Form Validation */ 
 
-#insertForm
+#loginForm
 {
     text-align: center;	
 }
@@ -132,3 +126,77 @@ div
 	background:red;
 	color:white;
 }
+
+/* Navigation Bar */
+#headerbar
+{
+	vertical-align: top ; 
+	background-color: #578733 ;
+	width: 100% ; 
+	position:relative ; 
+}
+
+#pageTitle
+{
+	display: inline-block ; 
+	vertical-align: top;
+	text-align: center ; 
+	margin-top: .5% ; 	
+}
+
+.faColor
+{
+	color: white ; 	
+}
+
+#menu
+{
+	margin-top: -4% ;  
+	font-family: 'Raleway', 'sans-serif' ;	
+}
+
+ul 
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display:inline-block ;
+}
+
+ul li 
+{
+  display: inline;
+  position: relative;
+  padding-right: 20px ;
+  float: left;
+}
+
+li ul { display: none; }
+
+ul li a 
+{
+  display: inline;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px 15px 5px 15px;
+  background: #578733;
+  white-space: nowrap;
+}
+
+ul li a:hover { background: #578733; }
+
+li:hover ul 
+{
+  display: inline;
+  position: relative;
+}
+
+li:hover li
+{
+  float: none;
+  font-size: 18px;
+}
+
+li:hover a { background: #578733; }
+
+li:hover li a:hover { background: #BFD997; }

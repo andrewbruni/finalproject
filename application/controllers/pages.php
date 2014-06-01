@@ -20,29 +20,48 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/home', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
+		else if( $page == 'nologin')
+		{
+			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/nologin', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+		else if( $page == 'home_blank')
+		{
+			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/home_blank', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
+		else if( $page == 'login' ) 
+		{
+			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/login', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
 		else if( $page == 'insert')
 		{
 			$data['title'] = ucfirst($page); // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
 			$this->load->view('pages/insert', $data) ;
 			$this->load->view('templates/footer', $data) ;
-			redirect('home') ;
 		}
-		else if( $page == 'delete')
+		else if( $page == 'insertIngredients')
 		{
 			$data['title'] = ucfirst($page); // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
-			$this->load->view('pages/delete', $data) ;
+			$this->load->view('pages/insertIngredients', $data) ;
 			$this->load->view('templates/footer', $data) ;
-			redirect('home') ;
 		}
-		else if( $page == 'update')
+		else if( $page == 'insert_blank')
 		{
 			$data['title'] = ucfirst($page); // Capitalize the first letter
 			$this->load->view('templates/header', $data) ;		
-			$this->load->view('pages/update', $data) ;
+			$this->load->view('pages/insert_blank', $data) ;
 			$this->load->view('templates/footer', $data) ;
-			redirect('home') ;
+			redirect('insert') ;
 		}
 	}
 }
