@@ -14,7 +14,7 @@ Backend page for inserting a recipe
 	else
 	{
 		/*Query the user_id for the current user*/	
-		$sql = 'SELECT user_id FROM Users where username='.$_SESSION['username'];
+		$sql = "SELECT user_id FROM Users where username='".$_SESSION['username']."'";
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
 			$userId = $row['user_id'];
