@@ -104,6 +104,21 @@ div
     text-align: center;	
 }
 
+#userForm
+{
+    text-align: center;	
+}
+
+#insertForm
+{
+    text-align: center;	
+}
+
+#searchForm1, #searchForm2, #searchForm3
+{
+    text-align: center;	
+}
+
 #deleteForm
 {
     text-align: center;	

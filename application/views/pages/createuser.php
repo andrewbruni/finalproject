@@ -6,7 +6,7 @@
     Redirect to login.php
 --> 
 
-<form id="userForm" action="../finalproject/createuser" enctype="multipart/form-data" method="post" class="pure-form center" > 
+<form id="userForm" action="../finalproject/login" enctype="multipart/form-data" method="post" class="pure-form center" > 
     	<br />
         <p><b>Create User </b>
         <br />

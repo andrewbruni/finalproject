@@ -30,7 +30,7 @@
         	<li><i class="fa fa-chevron-circle-right fa-3x faColor"></i>
         	<ul>
         		<li><a href="home">&nbsp; Home</a></li>
-        		<li><a href="">Search Drinks</a></li>
+        		<li><a href="search">Search Drinks</a></li>
         		<li><a href="insert">Add a Recipe</a></li>
         	</ul>
         	</li>
