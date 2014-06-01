@@ -4,5 +4,8 @@
 		setcookie('userCookie', '', time()-3600);
 	}
 	
+	
+	$_SESSION['bool'] = 0; 
+	
 	redirect('home') ; 
 ?>

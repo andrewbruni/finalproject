@@ -11,10 +11,12 @@
 // If cookie is set with user data 
 if(isset( $_COOKIE['userCookie']) )
 {
+	$_SESSION['bool'] = 1 ;
 	redirect('../finalproject/login') ; 
 }
 else 
 {
+	$_SESSION['bool'] = 0 ; 
 	// Debugging Code
 	// echo 'no cookie' ; 	
 }

@@ -28,6 +28,8 @@
 			setcookie("userCookie", $json, time()+604800);  /* expire in 7 days */
 			$_COOKIE['userCookie'] = $json;
 			
+			$_SESSION['bool'] = 1 ; 
+			
 			redirect('login') ;  
 		}
 		else
