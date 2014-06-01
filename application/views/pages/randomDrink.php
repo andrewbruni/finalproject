@@ -8,7 +8,7 @@ foreach($query->result() as $row)
 	$number = $row->thenum ; 	
 }
 
-$randomDrink = rand(0, $number);
+$randomDrink = rand(1, $number);
 
 echo $randomDrink ; 
 
