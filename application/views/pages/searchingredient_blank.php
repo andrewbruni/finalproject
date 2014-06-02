@@ -1,7 +1,7 @@
 <?php 
 	$isNull = true;
 	
-	$sql = "SELECT * FROM Ingredients INNER JOIN Recipe_Contents ON Recipe_Contents.ingredient_id=Ingredients.ingredient_id INNER JOIN Recipes ON Recipes.recipe_id=Recipe_Contents.recipe_id INNER JOIN Users ON Users.user_id=Recipes.user_id WHERE Ingredients.name='".$_POST['ingredientName']."' ORDER BY Recipes.name";
+	$sql = "SELECT * FROM Ingredients INNER JOIN Recipe_Contents ON Recipe_Contents.ingredient_id=Ingredients.ingredient_id INNER JOIN Recipes ON Recipes.recipe_id=Recipe_Contents.recipe_id INNER JOIN Users ON Users.user_id=Recipes.user_id WHERE Ingredients.name LIKE'%".$_POST['ingredientName']."%' ORDER BY Recipes.name";
 	$query = $this->db->query($sql);
 	foreach($query->result() as $row) {
 		$isNull = false;

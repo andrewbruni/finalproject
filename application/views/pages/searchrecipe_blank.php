@@ -2,7 +2,7 @@
 
 	$badRecipe = ' ' ; 
 	
-	$sql = ' SELECT * FROM recipes INNER JOIN Users on recipes.user_id=Users.user_id WHERE name = "'.$_POST['recipeName'].'"'  ;	
+	$sql = ' SELECT * FROM recipes INNER JOIN Users on recipes.user_id=Users.user_id WHERE name LIKE  "%'.$_POST['recipeName'].'%"'  ;	
 	$query = $this->db->query($sql) ;
 	
 	foreach($query->result() as $row)
