@@ -30,7 +30,8 @@
         	
         	<ul>
         		<li><a class="navColor" href="<?php  echo base_url(); ?>home">&nbsp; Home</a></li>
-        		<li><a class="navColor" href="<?php  echo base_url(); ?>search">Search Drinks</a></li>
+        		<li><a class="navColor" href="<?php  echo base_url(); ?>newrecipes">Newest Drinks</a></li>
+                <li><a class="navColor" href="<?php  echo base_url(); ?>search">Search Drinks</a></li>
         		<li><a class="navColor" href="<?php  echo base_url(); ?>insert">Add a Recipe</a></li>
         		<li><a class="navColor" href="<?php  echo base_url(); ?>logout_blank">Logout</a></li>
         	</ul>

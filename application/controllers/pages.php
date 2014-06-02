@@ -168,6 +168,13 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/logout_blank', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
+		else if( $page == 'newrecipes') 
+		{
+			$data['title'] = "Newest Recipes"; // Capitalize the first letter
+			$this->load->view('templates/header', $data) ;		
+			$this->load->view('pages/newrecipes', $data) ;
+			$this->load->view('templates/footer', $data) ;
+		}
 
 	}
 }
