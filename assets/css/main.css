@@ -77,8 +77,7 @@ div
 	-moz-transition: margin-left .5s ;
 }
 
-
-/* HOME PAGE */ 
+ 
 #home
 {
 	height: 40% ; 
@@ -86,7 +85,19 @@ div
 	margin-top: 3%;
 	margin-bottom:auto ; 
 	position:absolute ;
-} 
+}
+
+#viewdrink
+{
+	height: 40% ; 
+	width:50% ; 
+	margin-top: 3%;
+	margin-left: 43% ; 
+	margin-right: auto ; 
+	margin-bottom:auto ; 
+	position:absolute ;
+	display: inline  ; 
+}
 
 #accountButton
 {

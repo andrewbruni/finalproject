@@ -1,4 +1,4 @@
-<div class="center"  id="home">
+<div class="center" id="viewdrink">
 
 <!-- 
 	Drink Display Page 
@@ -57,7 +57,7 @@
 	foreach($ingredients as $item)
 	{
 		echo '<p>'.$item ; 
-		echo '&nbsp;' ; 
+		echo ': &nbsp; &nbsp;' ; 
 		echo $amounts[$i].'</p>' ; 
 		echo '<br /><br />' ; 
 		$i = $i + 1 ; 
@@ -66,6 +66,6 @@
 	echo '<p> <b>Instructions:</b> &nbsp;' .$instructions. '</p>' ; 
 ?> 
 
-
+</div>
 
 
