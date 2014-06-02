@@ -10,6 +10,10 @@
 
 	// Grab Cookie User Data
 	
+	if( !isset($_COOKIE['userCookie'])) 
+	{
+		redirect('home') ; 
+	}
 	$cookie = $_COOKIE['userCookie'];
 	$cookie = stripslashes($cookie);
 	$userCookieArray = json_decode($cookie, true);
