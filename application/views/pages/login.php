@@ -29,7 +29,7 @@
 		$_SESSION['color3'] = $row->css3 ; 
 	}
 	
-	$sql = 'SELECT * FROM recipes WHERE user_id =' . $userid .  '' ;
+	$sql = 'SELECT * FROM recipes WHERE user_id =' . $userid .  ' ORDER BY name' ;
 	$query = $this->db->query($sql) ;
 	
 		
@@ -37,9 +37,9 @@
 	
 	foreach ($query->result() as $row)
 	{	
-		$location = "location.href='view/?drink=".$row->name."'" ; 
-		$updateMe = "location.href='update/?drink=".$row->name."'" ;
-		$deleteMe = "location.href='delete/?drink=".$row->name."'" ;
+		$location = "location.href='view/?drink=".$row->recipe_id."'" ; 
+		$updateMe = "location.href='update/?drink=".$row->recipe_id."'" ;
+		$deleteMe = "location.href='delete/?drink=".$row->recipe_id."'" ;
 		echo '<tr>' ;
 		echo '<td> <button onClick="'.$location.'"> View </button> </td>' ;
 		echo '<td> <button onClick="'.$updateMe.'"> Update </button> </td>' ; 
@@ -47,6 +47,7 @@
    		echo '<td>'.$row->name.'</td>' ;
    		echo '<td>'.$row->short_description.'</td>' ;
    		echo '<td>'.$userCookieArray[0].'</td>' ;
+   		echo '<td style="display:none;">'.$row->recipe_id.'</td>';
 		echo '</tr>' ;
 	}
 	

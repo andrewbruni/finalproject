@@ -20,7 +20,7 @@
 	}
 	
 	// Instructions
-	$sql2 = 'SELECT * FROM recipe_detail where recipe_id = "' . $drinkID . '"' ; 
+	$sql2 = 'SELECT * FROM Recipe_Detail where recipe_id = "' . $drinkID . '"' ; 
 	$query2 = $this->db->query($sql2) ; 
 	foreach( $query2->result() as $row2 ) 
 	{
@@ -29,7 +29,7 @@
 	}
 	
 	// Amounts
-	$sql3 = 'SELECT * FROM recipe_contents where recipe_id = "' . $drinkID . '"' ; 
+	$sql3 = 'SELECT * FROM Recipe_Contents where recipe_id = "' . $drinkID . '"' ; 
 	$query3 = $this->db->query($sql3) ; 
 	foreach( $query3->result() as $row3 ) 
 	{

@@ -15,12 +15,12 @@ Backend page for inserting a recipe
 	{
 		/*Query the user_id for the current user*/	
 		$sql = "SELECT user_id FROM Users where username='".$_SESSION['username']."'";
+		
 		$query = $this->db->query($sql);
 		$userId = null;
 		foreach($query->result() as $row) {
 			$userId = $row->user_id;
 		}
-		echo $userId;
 		/*Insert the Recipe into the Recipe Table*/
 		$data = array(
 		'name' => $_SESSION['recipeName'],
@@ -32,17 +32,14 @@ Backend page for inserting a recipe
 		/*Query the id of the recipe that was just inserted*/
 
 		$sql = "SELECT recipe_id FROM Recipes WHERE name ='".$rName."' AND user_id=".$userId;
-		echo $sql;
 		$recipeId = null;
 
 
 		$sql = "SELECT recipe_id FROM Recipes WHERE name='".$_SESSION['recipeName']."' AND user_id=".$userId." AND short_description='".$_POST['description']."'";
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
-		echo "Got Called";
 			$recipeId = $row->recipe_id;
 		}
-		echo $recipeId;
 		/*Insert the Instructions for the recipe*/
 		$data = array(
 		'recipe_id' => $recipeId,

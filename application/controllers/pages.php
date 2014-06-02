@@ -168,7 +168,6 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/logout_blank', $data) ;
 			$this->load->view('templates/footer', $data) ;
 		}
-		
 
 	}
 }

@@ -9,10 +9,13 @@
                 	var p = document.createElement(p);
                     p.innerHTML = request.responseText;
                     document.getElementById('result').appendChild(p);
+                    if($('input[type=checkbox]:checked').length > 0) {
+	                    location.reload();
+                    }
                 }
              };
 
-			request.open('post', '<?php echo base_url() ?>update_blank', true);
+			request.open('post', '<?php echo base_url() ?>update_blank?xValue='+(xValue+factor), true);
 			var imageData = new FormData(document.getElementById('insertForm'));
 			request.send(imageData);
 		};
@@ -28,15 +31,16 @@
 	$iID = array() ; 
 	$ingredients = array() ; 
 	$i = 0  ;
-	
+	$drinkID = $_GET['drink'];
+	$drinkName = ' ';
 	// ID
-	$sql = 'SELECT * FROM recipes WHERE name = "' . $_GET['drink'] . '"' ; 
+	$sql = 'SELECT * FROM recipes WHERE recipe_id = "' . $drinkID . '"' ; 
 	$query = $this->db->query($sql) ; 
 	foreach( $query->result() as $row)
 	{
-		$drinkID = $row->recipe_id ; 
 		$_SESSION['drinkID'] = $row->recipe_id ; 
-		$shortDesc = $row->short_description ; 	
+		$shortDesc = $row->short_description ; 
+		$drinkName = $row->name ;	
 	}
 	
 	// Instructions
@@ -55,7 +59,7 @@
 	{
 		array_push($iID, $row3->ingredient_id) ; 
 		array_push($amounts, $row3->amount) ;   	
-	}
+	} 
 	
 	// Ingredient Names 
 	
@@ -77,12 +81,24 @@
         <p><b>Update a Recipe: &nbsp;</b>
         <br />
 		<br />
-        Recipe Name <input type="text" value=<?php echo '"'.$_GET['drink'].'"' ?> name="recipeName" id="recipeName" />
+        Recipe Name <input type="text" value=<?php echo '"'.$drinkName.'"' ?> name="recipeName" id="recipeName" />
        	<br />
 		<br />
+		<div id="ingredients">
         <?php
 			$x = count($ingredients) ; 
-			
+			?>
+			<script>
+				var factor = 0;
+				var xValue = <?php echo $x; ?>;
+				function addRow() {
+					factor++;
+					var newRow = '<div>Ingredient Name: &nbsp; <input type="text" value="" name="i'+(factor+xValue)+'" id="i'+(factor+xValue)+'" /> ';
+					newRow = newRow+'Amount: &nbsp; <input type="text" value="" name="a'+(factor+xValue)+'" id="a'+(factor+xValue)+'" /><br /></div>';
+					$("#ingredients").append(newRow);
+				};
+			</script>
+			<?php
         	while( $x != 0 )
 			{
 				$ingredientName = '"i' . $x . '"' ; 
@@ -90,13 +106,13 @@
 				$amount = '"a' . $x . '"' ; 
 				$x = $x - 1 ;
 				
-				echo 'Ingredient Name: &nbsp; <input type="text" value="'.$ingredients[$x].'" name='.$ingredientName.' id='.$ingredientId.' />' ; 
+				echo '<div>Ingredient Name: &nbsp; <input type="text" value="'.$ingredients[$x].'" name='.$ingredientName.' id='.$ingredientId.' />' ; 
         		echo ' Amount: &nbsp; <input type="text" value="'.$amounts[$x].'" name='.$amount.' id='.$amount.' /> ' ;
-       			echo ' <br /> ' ; 
-				echo ' <br />' ; 			
+        		echo ' Delete?: &nbsp; <input type="checkbox" class="delete" name="delete[]" value="'.$iID[$x].'"> </div>';
+       			echo ' <br /> ' ; 			
 				 
-			}
-        ?>
+			}?>
+		</div>
         <br />
         Description: 
         <br />
@@ -108,7 +124,8 @@
 		<textarea name="instructions" id="instructions" rows="4"  cols="50"> <?php echo $instructions ?> </textarea>
         <br />
 		<br />
-        <input type="button" value="Update" onclick="sendFormData()"/></p>
+        <input type="button" value="Update" onclick="sendFormData()"/>
+        <input type="button" value="Add Ingredient" onclick="addRow()"</p>
 </form>
 
 <?php
