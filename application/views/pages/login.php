@@ -37,7 +37,7 @@
 	
 	foreach ($query->result() as $row)
 	{	
-		$location = "location.href='view/?drink=".$row->recipe_id."'" ; 
+		$location = "location.href='view/?drink=".$row->name."'" ; 
 		$updateMe = "location.href='update/?drink=".$row->recipe_id."'" ;
 		$deleteMe = "location.href='delete/?drink=".$row->recipe_id."'" ;
 		echo '<tr>' ;
