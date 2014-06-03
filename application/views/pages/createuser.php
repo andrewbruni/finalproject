@@ -1,3 +1,7 @@
+<script>
+	$('#userForm').validate();
+</script>
+
 <div class="center"  id="home">
 
 <!-- 
@@ -6,17 +10,17 @@
     Redirect to login.php
 --> 
 
-<form id="userForm" action="../finalproject/createuser_blank" enctype="multipart/form-data" method="post" class="pure-form center" > 
+<form id="userForm" class="cmxform" action="../finalproject/createuser_blank" enctype="multipart/form-data" method="post" class="pure-form center" action novalidate="novalidate"> 
     	<br />
         <p><b>Create User </b>
         <br />
 		<br />
 
-        Username <input type="text" value="" name="userName" id="userName" />
+        Username <input type="text" value="" name="userName" id="userName"  />
        	<br />
 		<br />
 
-        Password <input type="password" value="" name="password" id="password" />
+        Password <input type="password" value="" name="password" id="password"  />
         <br />
 		<br />
 		Navigation Color: 	<select name="color1" id="color1" >

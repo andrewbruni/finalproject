@@ -10,7 +10,7 @@
 <script type="text/javascript" src="/finalproject/assets/js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="/finalproject/assets/js/jquery.tablesorter.js"></script>
 <script type="text/javascript" src="/finalproject/assets/js/validate.js"></script>
-
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
 	
 <title><?php echo $title ?> </title>
 </head>

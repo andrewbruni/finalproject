@@ -27,7 +27,7 @@ Backend page for inserting a recipe
 		'user_id' => $userId,
 		'short_description' => $_POST['description'] );
 		$this->db->insert('Recipes', $data);
-		$rName = $_SESSION['recipeName'];
+		$rName = mysql_real_escape_string($_SESSION['recipeName']);
 		
 		/*Query the id of the recipe that was just inserted*/
 
@@ -35,7 +35,7 @@ Backend page for inserting a recipe
 		$recipeId = null;
 
 
-		$sql = "SELECT recipe_id FROM Recipes WHERE name='".$_SESSION['recipeName']."' AND user_id=".$userId." AND short_description='".$_POST['description']."'";
+		$sql = "SELECT recipe_id FROM Recipes WHERE name='".mysql_real_escape_string($_SESSION['recipeName'])."' AND user_id=".$userId." AND short_description='".mysql_real_escape_string($_POST['description'])."'";
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
 			$recipeId = $row->recipe_id;
@@ -51,7 +51,7 @@ Backend page for inserting a recipe
 		$ingNames = array();
 		$amounts = array();
 		while ($x != 0) {
-			array_push($ingNames, $_POST['i'.$x]);
+			array_push($ingNames, mysql_real_escape_string($_POST['i'.$x]));
 			$amounts[$_POST['i'.$x]] = $_POST['a'.$x];
 
 			$x = $x-1;
@@ -67,29 +67,28 @@ Backend page for inserting a recipe
 		}
 		
 		/*Insert missing Ingredients*/
-		$data = array();
-		foreach($ingToInsert as $ing) {
-			$temp = array(
-			'name' => $ing
-			);
-			array_push($data, $temp);
+		if(count($ingToInsert) > 0) {
+			$data = array();
+			foreach($ingToInsert as $ing) {
+				$temp = array(
+				'name' => $ing
+				);
+				array_push($data, $temp);
+			}
+			$this->db->insert_batch('Ingredients', $data);
 		}
-		$this->db->insert_batch('Ingredients', $data);
 		
 		/*Find the Id's for all ingredients and submit the ingredient details to the content table*/
-		$data = array();
 		$sql = "SELECT * FROM Ingredients WHERE name IN('".implode("','", $ingNames)."')";
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row) {
-			$temp = array(
+			$data = array(
 			'recipe_id' => $recipeId,
 			'ingredient_id' => $row->ingredient_id,
 			'amount' => $amounts[$row->name]
 			);
-			array_push($data, $temp);
+			$this->db->insert('Recipe_Contents', $data);
 		}
-		$this->db->insert_batch('Recipe_Contents', $data);
-		
 		
 		redirect('insertComplete') ; 
 	}

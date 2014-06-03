@@ -16,7 +16,7 @@
              };
 
 			request.open('post', '<?php echo base_url() ?>update_blank?xValue='+(xValue+factor), true);
-			var imageData = new FormData(document.getElementById('insertForm'));
+			var imageData = new FormData(document.getElementById('insertForm3'));
 			request.send(imageData);
 		};
 </script>
@@ -76,7 +76,7 @@
 ?>
 
 
-<form id="insertForm" action="<?php echo base_url() ?>update_blank" enctype="multipart/form-data" method="post" class="pure-form center" > 
+<form id="insertForm3" action="<?php echo base_url() ?>update_blank" enctype="multipart/form-data" method="post" class="pure-form center" > 
     	<br />
         <p><b>Update a Recipe: &nbsp;</b>
         <br />

@@ -12,9 +12,11 @@ Form will forawrd to insert_blank and redirect back.
 	//echo $_SESSION['number'] ; 
 ?>
 
+	<script>
+		var numIngredients = <?php echo $_SESSION['number']; ?>;
+	</script>
 
-
-	<form id="insertForm" action="../finalproject/insert_blank" enctype="multipart/form-data" method="post" class="pure-form center" > 
+	<form id="insertForm2" action="../finalproject/insert_blank" enctype="multipart/form-data" method="post" class="pure-form center" > 
     	<br />
         <p><b>Add a Recipe: &nbsp;</b>
         <br />
